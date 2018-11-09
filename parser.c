@@ -6,7 +6,7 @@
 /*   By: rejocic <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 21:15:25 by rejocic           #+#    #+#             */
-/*   Updated: 2018/09/10 21:15:27 by rejocic          ###   ########.fr       */
+/*   Updated: 2018/11/09 14:51:05 by rejocic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,10 @@ int			**fdfreader(int fd, t_mlx *mlx)
 	char	*line;
 	int		**oldarr;
 
-	get_next_line(fd, &line);
-	initialread(line, mlx);
+	if (get_next_line(fd, &line) == 1)
+		initialread(line, mlx);
+	else
+		return (0);
 	while ((get_next_line(fd, &line)) == 1)
 	{
 		k = 0;
