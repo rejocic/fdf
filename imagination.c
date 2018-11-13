@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-void		niceone(t_mlx *mlx)
+void		seg_call(t_mlx *mlx)
 {
 	int		x;
 	int		y;
@@ -52,9 +52,9 @@ int			ft_image(t_mlx *mlx)
 	mlx->img_ptr = mlx_new_image(mlx->mlx_ptr, mlx->cords.max_x * \
 	(mlx->sizemult * XMOD), mlx->cords.max_y * (mlx->sizemult * YMOD));
 	mlx->addr = mlx_get_data_addr(mlx->img_ptr, &(mlx->bpp), \
-	&(mlx->lsize), &(mlx->native_american));
+	&(mlx->lsize), &(mlx->endian));
 	mlx->colorval = mlx_get_color_value(mlx->mlx_ptr, mlx->colors[mlx->color]);
-	niceone(mlx);
+	seg_call(mlx);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img_ptr, 0, 0);
 	mlx_destroy_image(mlx->mlx_ptr, mlx->img_ptr);
 	mlx_string_put(mlx->mlx_ptr, mlx->win_ptr, 8, 3, 0xf9fafc, "1-5 color");

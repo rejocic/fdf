@@ -47,7 +47,7 @@ typedef	struct		s_mlx
 	char			*addr;
 	int				bpp;
 	int				lsize;
-	int				native_american;
+	int				endian;
 	char			**chararr;
 	int				*introw;
 	int				**intarr;
@@ -63,13 +63,12 @@ typedef	struct		s_mlx
 	int				wc;
 }					t_mlx;
 
-int					shut(t_mlx *ptrs);
 int					key_press(int keycode, t_mlx *ptrs);
 int					**fdfreader(int fd, t_mlx *mlx);
 int					window(t_mlx *mlx);
 int					ft_image(t_mlx *mlx);
 void				perspective(t_mlx *mlx);
-void				niceone(t_mlx *mlx);
+void				seg_call(t_mlx *mlx);
 void				ft_put_pixel(t_mlx *mlx, int x, int y);
 void				ft_ifbigdx(int x0, int y0, t_mlx *mlx);
 void				ft_ifsmalldx(int x0, int y0, t_mlx *mlx);

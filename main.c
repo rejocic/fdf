@@ -57,7 +57,7 @@ void	perspective(t_mlx *mlx)
 	}
 }
 
-int		sos(int fd, t_mlx *mlx)
+int		struct_def(int fd, t_mlx *mlx)
 {
 	int		i;
 
@@ -95,7 +95,7 @@ int		main(int argc, char **argv)
 			ft_putstr("Error: input must be a file\n");
 			return (0);
 		}
-		if (sos(fd, mlx) == 0)
+		if (struct_def(fd, mlx) == 0)
 			return (0);
 		window(mlx);
 		close(fd);
